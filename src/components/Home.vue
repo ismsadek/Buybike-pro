@@ -67,16 +67,54 @@
 
 <script>
 
-export default {
-  data () {
-    return {
+  import { dbUsersRef } from '../firebase'
+  import { dbFilterOneRef } from '../firebase';
+	import { dbFilterTwoRef } from '../firebase';
+	import { dbFilterThreeRef } from '../firebase';	
+	import { dbFinalRef } from '../firebase'
+	import { dbBrandRef } from '../firebase'
+	import { dbSortedByPrice } from '../firebase'
+	import { dbSortedByPower } from '../firebase'
+  
+  export default {
+    data () {
+      return {
+        
+      }
+    },
+    methods: {
       
+    },
+    created() {
+      dbUsersRef.remove();
+      dbFilterOneRef.remove();
+      dbFilterTwoRef.remove();
+      dbFilterThreeRef.remove();
+      dbFinalRef.remove();
+      dbSortedByPrice.remove();
+      dbSortedByPower.remove();
+    },
+    firebase: {
+      filter1:{
+        source: dbFilterOneRef
+      },
+      filter2:{
+        source: dbFilterTwoRef
+      },
+      filter3:{
+        source: dbFilterThreeRef
+      },
+      final:{
+        source: dbFinalRef
+      },
+      sortedPrice:{
+        source: dbSortedByPrice
+      },
+      sortedPower: {
+        source: dbSortedByPower
+      }
     }
-  },
-  methods: {
-    
   }
-}
 </script>
 
 <style>

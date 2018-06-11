@@ -111,7 +111,7 @@
 				users: [],
 				errors: [],
 				sortable: [],
-				pwer: []
+				power: []
 			}
 		},
 		methods : {
